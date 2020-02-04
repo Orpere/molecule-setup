@@ -14,23 +14,21 @@
   ```bash
   xcode-select --install
   ```
-- install pip 
+- install [virtualenvrapper](https://swapps.com/blog/how-to-configure-virtualenvwrapper-with-python3-in-osx-mojave/) 
+  
+- create your virtualenv
   ```bash
-  sudo easy_install pip 
-  ```
-- install ansible
+  mkvirtualenv molecule
+  ``` 
+now for access the env you just have to 
   ```bash
-  sudo pip install ansible
+  ➜  ~ workon molecule
+  (molecule) ➜  ~
   ```
-- upgrade ansible
+- install molecule ansible and docker driver inside of the env 
   ```bash
-  sudo pip install ansible --upgrade 
+    pip install ansible molecule docker 
   ```
-- install molecule
-  ```bash
-  pip install --user molecule
-  ```
-- test molecule
   ```bash
   molecule                                                                                                                      
   Usage: molecule [OPTIONS] COMMAND [ARGS]...
@@ -47,5 +45,22 @@
   eval "$(_MOLECULE_COMPLETE=source molecule)"
   
   ```
-- use molecule 
-
+  ```bash
+  molecule --version 
+  molecule, version 2.22
+  ```
+- use [molecule](https://www.jeffgeerling.com/blog/2018/testing-your-ansible-roles-molecule)
+  ```bash
+   docker pull geerlingguy/docker-centos7-ansible
+   molecule init role -r test -d docker
+   cd test
+   molecule converge
+   <do some work on the role>
+   molecule converge
+   <see that some changes didn't work>
+   molecule converge
+   <see everything working well, commit my changes>
+   molecule converge
+   <idempotence check - make sure Ansible doesn't report any changes on a second run>
+   molecule destroy
+  ```
