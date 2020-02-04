@@ -59,7 +59,7 @@
     
    molecule destroy
   ```
-- in case you need to test systemd _this is not production grade is just to test roles_ you can configure molecule.yml as our example 
+- in case you need to test systemd **_this is not production grade is just to testing roles_ ** you can configure molecule.yml as our example 
 
 ```yaml
 dependency:
