@@ -59,3 +59,29 @@
     
    molecule destroy
   ```
+- in case you need to test systemd _this is not production grade is just to test roles_ you can configure molecule.yml as our example 
+
+```yaml
+dependency:
+  name: galaxy
+driver:
+  name: docker
+lint:
+  name: yamllint
+platforms:
+  - name: instance
+    image: centos/systemd:latest
+    command: ""
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+    privileged: true
+    pre_build_image: true
+provisioner:
+  name: ansible
+  lint:
+    name: ansible-lint
+verifier:
+  name: testinfra
+  lint:
+    name: flake8
+```
