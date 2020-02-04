@@ -32,8 +32,8 @@
   ```
 - test molecule
   ```bash
-molecule                                                                                                                      
-Usage: molecule [OPTIONS] COMMAND [ARGS]...
+  molecule                                                                                                                      
+  Usage: molecule [OPTIONS] COMMAND [ARGS]...
 
    _____     _             _
   |     |___| |___ ___ _ _| |___
@@ -44,8 +44,8 @@ Usage: molecule [OPTIONS] COMMAND [ARGS]...
 
   Enable autocomplete issue:
 
-    eval "$(_MOLECULE_COMPLETE=source molecule)"
-  ...
+  eval "$(_MOLECULE_COMPLETE=source molecule)"
+  
   ```
 - use molecule 
 
