@@ -20,7 +20,7 @@
   ```bash
   mkvirtualenv molecule
   ``` 
-now for access the env you just have to 
+  now for access the env you just have to 
   ```bash
   ➜  ~ workon molecule
   (molecule) ➜  ~
