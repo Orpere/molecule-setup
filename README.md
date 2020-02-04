@@ -50,17 +50,12 @@
   molecule, version 2.22
   ```
 - use [molecule](https://www.jeffgeerling.com/blog/2018/testing-your-ansible-roles-molecule)
+  
   ```bash
-   docker pull geerlingguy/docker-centos7-ansible
    molecule init role -r test -d docker
    cd test
+
    molecule converge
-   <do some work on the role>
-   molecule converge
-   <see that some changes didn't work>
-   molecule converge
-   <see everything working well, commit my changes>
-   molecule converge
-   <idempotence check - make sure Ansible doesn't report any changes on a second run>
+    
    molecule destroy
   ```
