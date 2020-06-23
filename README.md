@@ -52,7 +52,7 @@
 - use [molecule](https://www.jeffgeerling.com/blog/2018/testing-your-ansible-roles-molecule)
   
   ```bash
-   molecule init role -r test -d docker
+   molecule init role test -d docker
    cd test
 
    molecule converge
@@ -66,8 +66,8 @@ dependency:
   name: galaxy
 driver:
   name: docker
-lint:
-  name: yamllint
+  lint:
+    name: yamllint
 platforms:
   - name: instance
     image: centos/systemd:latest
